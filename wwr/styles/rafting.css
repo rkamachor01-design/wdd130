@@ -21,6 +21,8 @@
 body {
     font-family: Arial, sans-serif;
     color: var(--text-color);
+    background-color: var(--light-bg);
+    /* Uses --light-bg */
 }
 
 /* ==========================
@@ -44,9 +46,12 @@ header nav a {
     text-decoration: none;
     margin-left: 1.5rem;
     font-weight: bold;
+    transition: color 0.2s ease;
 }
 
 header nav a:hover {
+    color: var(--accent-color);
+    /* Uses --accent-color */
     text-decoration: underline;
 }
 
@@ -132,7 +137,7 @@ section h2 {
 }
 
 section p {
-    color: #555555;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
