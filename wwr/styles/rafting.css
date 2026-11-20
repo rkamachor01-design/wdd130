@@ -22,36 +22,42 @@ body {
     font-family: Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--light-bg);
-    /* Uses --light-bg */
 }
 
 /* ==========================
-   Header Styles
+   Header Styles (Grid + Flex Nav)
    ========================== */
 header {
     background-color: var(--primary-color);
     color: var(--white);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
+    gap: 1rem;
     padding: 1rem 2rem;
 }
 
 header img {
     max-height: 60px;
+    width: auto;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 header nav a {
     color: var(--white);
     text-decoration: none;
-    margin-left: 1.5rem;
     font-weight: bold;
     transition: color 0.2s ease;
 }
 
 header nav a:hover {
     color: var(--accent-color);
-    /* Uses --accent-color */
     text-decoration: underline;
 }
 
@@ -101,10 +107,8 @@ header nav a:hover {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    /* Contains the floated image */
 }
 
-/* Required float rule for the test script */
 .hero article img {
     width: 100px;
     height: 100px;
@@ -136,6 +140,11 @@ section h2 {
     margin-bottom: 1rem;
 }
 
+section p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
 .history-grid {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -146,7 +155,6 @@ section h2 {
 .history-grid img {
     width: 100%;
     max-width: 300px;
-    /* Forces the middle column to stay compact */
     height: auto;
     display: block;
 }
@@ -175,11 +183,6 @@ section h2 {
     font-size: 0.9rem;
 }
 
-section p {
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
 /* ==========================
    Footer Styles
    ========================== */
@@ -197,16 +200,6 @@ footer p {
     font-size: 0.9rem;
 }
 
-.socialmedia {
-    display: flex;
-    gap: 1rem;
-}
-
-.socialmedia img {
-    width: 24px;
-    height: 24px;
-}
-
 footer nav.socialmedia {
     display: flex;
     gap: 1rem;
@@ -220,12 +213,4 @@ footer nav.socialmedia img {
 
 footer nav.socialmedia img:hover {
     transform: scale(1.1);
-}
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    background-color: var(--primary-color);
 }
